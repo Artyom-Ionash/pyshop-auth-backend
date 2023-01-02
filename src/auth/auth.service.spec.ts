@@ -80,7 +80,7 @@ describe('validateLogin', () => {
   });
 
   it('should return JWT object when credentials are valid', async () => {
-    const res = await service.login({ username: 'maria', userId: 3 });
+    const res = await service.login({ id: 3 });
     expect(res.access_token).toBeDefined();
   });
 });
