@@ -7,8 +7,8 @@ describe('UsersService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [UsersService],
       imports: [PrismaModule],
+      providers: [UsersService],
     }).compile();
 
     service = module.get<UsersService>(UsersService);
@@ -20,7 +20,6 @@ describe('UsersService', () => {
 
   it('data should be defined', async () => {
     const data = await service.findAll();
-    console.log(data);
     expect(data).toBeDefined();
   });
 });

@@ -5,6 +5,25 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator nestjsDto {
+  provider                        = "prisma-generator-nestjs-dto"
+  output                          = "../generated/nestjs-dto"
+  outputToNestJsResourceStructure = "true"
+  flatResourceStructure           = "false"
+  exportRelationModifierClasses   = "true"
+  reExport                        = "false"
+  createDtoPrefix                 = "Create"
+  updateDtoPrefix                 = "Update"
+  dtoSuffix                       = "Dto"
+  entityPrefix                    = ""
+  entitySuffix                    = "Entity"
+  classValidation                 = "true"
+  fileNamingStyle                 = "camel"
+  noDependencies                  = "false"
+  outputType                      = "class"
+  prettier                        = "true"
+}
+
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
